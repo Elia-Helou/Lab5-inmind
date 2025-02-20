@@ -1,10 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DDDProject.Domain.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace DDDProject.Persistence.DbContext;
 
-public class AppDbContext
+public class AppDbContext : Microsoft.EntityFrameworkCore.DbContext
 {
-    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+
+    public AppDbContext(DbContextOptions<AppDbContext> options)
+        : base(options)
     {
     }
 
@@ -13,4 +16,11 @@ public class AppDbContext
     public DbSet<Teacher> Teachers { get; set; }
     public DbSet<Grade> Grades { get; set; }
     public DbSet<TimeSlot> TimeSlots { get; set; }
+    
+    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+
+    //{
+      //  optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=umsdb;Username=postgres;Password=postgrespassword");
+    //}
+    
 }

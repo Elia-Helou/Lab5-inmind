@@ -1,0 +1,12 @@
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Infrastructure\bin\Debug\net8.0\DDDProject.Infrastructure.deps.json
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Infrastructure\bin\Debug\net8.0\DDDProject.Infrastructure.dll
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Infrastructure\bin\Debug\net8.0\DDDProject.Infrastructure.pdb
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Infrastructure\obj\Debug\net8.0\DDDProject.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Infrastructure\obj\Debug\net8.0\DDDProject.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Infrastructure\obj\Debug\net8.0\DDDProject.Infrastructure.AssemblyInfo.cs
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Infrastructure\obj\Debug\net8.0\DDDProject.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Infrastructure\obj\Debug\net8.0\DDDProject.Infrastructure.sourcelink.json
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Infrastructure\obj\Debug\net8.0\DDDProject.Infrastructure.dll
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Infrastructure\obj\Debug\net8.0\refint\DDDProject.Infrastructure.dll
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Infrastructure\obj\Debug\net8.0\DDDProject.Infrastructure.pdb
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Infrastructure\obj\Debug\net8.0\ref\DDDProject.Infrastructure.dll
