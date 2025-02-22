@@ -145,3 +145,6 @@ C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\tr\Micros
 C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\MediatR.dll
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\MediatR.Contracts.dll
