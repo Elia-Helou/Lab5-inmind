@@ -17,11 +17,13 @@
 
     <ItemGroup>
       <Folder Include="Controllers\" />
+      <Folder Include="ViewModels\" />
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\DDDProject.Application\DDDProject.Application.csproj" />
         <ProjectReference Include="..\DDDProject.Common\DDDProject.Common.csproj" />
+        <ProjectReference Include="..\DDDProject.Persistence\DDDProject.Persistence.csproj" />
     </ItemGroup>
 
 </Project>

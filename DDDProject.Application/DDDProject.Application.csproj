@@ -9,14 +9,11 @@
     <ItemGroup>
       <Folder Include="Dtos\" />
       <Folder Include="Handlers\" />
-      <Folder Include="Services\" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\DDDProject.Common\DDDProject.Common.csproj" />
       <ProjectReference Include="..\DDDProject.Domain\DDDProject.Domain.csproj" />
-      <ProjectReference Include="..\DDDProject.Infrastructure\DDDProject.Infrastructure.csproj" />
-      <ProjectReference Include="..\DDDProject.Persistence\DDDProject.Persistence.csproj" />
     </ItemGroup>
     
 

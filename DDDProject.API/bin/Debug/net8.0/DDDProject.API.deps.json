@@ -10,6 +10,7 @@
         "dependencies": {
           "DDDProject.Application": "1.0.0",
           "DDDProject.Common": "1.0.0",
+          "DDDProject.Persistence": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "8.0.11",
           "Microsoft.EntityFrameworkCore.Design": "9.0.2",
           "Swashbuckle.AspNetCore": "6.6.2"
@@ -711,9 +712,7 @@
       "DDDProject.Application/1.0.0": {
         "dependencies": {
           "DDDProject.Common": "1.0.0",
-          "DDDProject.Domain": "1.0.0",
-          "DDDProject.Infrastructure": "1.0.0",
-          "DDDProject.Persistence": "1.0.0"
+          "DDDProject.Domain": "1.0.0"
         },
         "runtime": {
           "DDDProject.Application.dll": {
@@ -738,18 +737,10 @@
           }
         }
       },
-      "DDDProject.Infrastructure/1.0.0": {
-        "runtime": {
-          "DDDProject.Infrastructure.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
       "DDDProject.Persistence/1.0.0": {
         "dependencies": {
+          "DDDProject.Application": "1.0.0",
           "DDDProject.Common": "1.0.0",
-          "DDDProject.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.2",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.3"
         },
@@ -1129,11 +1120,6 @@
       "sha512": ""
     },
     "DDDProject.Domain/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "DDDProject.Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

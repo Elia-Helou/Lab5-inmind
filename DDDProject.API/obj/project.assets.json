@@ -1077,9 +1077,7 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "DDDProject.Common": "1.0.0",
-          "DDDProject.Domain": "1.0.0",
-          "DDDProject.Infrastructure": "1.0.0",
-          "DDDProject.Persistence": "1.0.0"
+          "DDDProject.Domain": "1.0.0"
         },
         "compile": {
           "bin/placeholder/DDDProject.Application.dll": {}
@@ -1108,22 +1106,12 @@
           "bin/placeholder/DDDProject.Domain.dll": {}
         }
       },
-      "DDDProject.Infrastructure/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "compile": {
-          "bin/placeholder/DDDProject.Infrastructure.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DDDProject.Infrastructure.dll": {}
-        }
-      },
       "DDDProject.Persistence/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "DDDProject.Application": "1.0.0",
           "DDDProject.Common": "1.0.0",
-          "DDDProject.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.2",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.3"
         },
@@ -3439,11 +3427,6 @@
       "path": "../DDDProject.Domain/DDDProject.Domain.csproj",
       "msbuildProject": "../DDDProject.Domain/DDDProject.Domain.csproj"
     },
-    "DDDProject.Infrastructure/1.0.0": {
-      "type": "project",
-      "path": "../DDDProject.Infrastructure/DDDProject.Infrastructure.csproj",
-      "msbuildProject": "../DDDProject.Infrastructure/DDDProject.Infrastructure.csproj"
-    },
     "DDDProject.Persistence/1.0.0": {
       "type": "project",
       "path": "../DDDProject.Persistence/DDDProject.Persistence.csproj",
@@ -3454,6 +3437,7 @@
     "net8.0": [
       "DDDProject.Application >= 1.0.0",
       "DDDProject.Common >= 1.0.0",
+      "DDDProject.Persistence >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 8.0.11",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.2",
       "Swashbuckle.AspNetCore >= 6.6.2"
@@ -3496,6 +3480,9 @@
             },
             "C:\\Users\\Elia\\RiderProjects\\DDDProject\\DDDProject.Common\\DDDProject.Common.csproj": {
               "projectPath": "C:\\Users\\Elia\\RiderProjects\\DDDProject\\DDDProject.Common\\DDDProject.Common.csproj"
+            },
+            "C:\\Users\\Elia\\RiderProjects\\DDDProject\\DDDProject.Persistence\\DDDProject.Persistence.csproj": {
+              "projectPath": "C:\\Users\\Elia\\RiderProjects\\DDDProject\\DDDProject.Persistence\\DDDProject.Persistence.csproj"
             }
           }
         }

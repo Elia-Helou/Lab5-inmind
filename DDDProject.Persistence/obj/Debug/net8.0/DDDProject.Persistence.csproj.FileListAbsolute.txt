@@ -18,3 +18,5 @@ C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Persistence\obj\Debug\net8.0\r
 C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Persistence\obj\Debug\net8.0\DDDProject.Persistence.pdb
 C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Persistence\obj\Debug\net8.0\DDDProject.Persistence.genruntimeconfig.cache
 C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Persistence\obj\Debug\net8.0\ref\DDDProject.Persistence.dll
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Persistence\bin\Debug\net8.0\DDDProject.Application.dll
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Persistence\bin\Debug\net8.0\DDDProject.Application.pdb

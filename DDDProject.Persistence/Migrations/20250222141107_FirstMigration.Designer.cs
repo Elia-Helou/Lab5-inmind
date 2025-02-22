@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DDDProject.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250220103309_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20250222141107_FirstMigration")]
+    partial class FirstMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,21 +24,6 @@ namespace DDDProject.Persistence.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
-
-            modelBuilder.Entity("CourseStudent", b =>
-                {
-                    b.Property<Guid>("CoursesId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("StudentsId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("CoursesId", "StudentsId");
-
-                    b.HasIndex("StudentsId");
-
-                    b.ToTable("CourseStudent");
-                });
 
             modelBuilder.Entity("DDDProject.Domain.Models.Course", b =>
                 {
@@ -67,6 +52,30 @@ namespace DDDProject.Persistence.Migrations
                     b.HasIndex("TeacherId");
 
                     b.ToTable("Courses");
+                });
+
+            modelBuilder.Entity("DDDProject.Domain.Models.Enrollment", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("CourseId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("EnrollmentDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("StudentId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CourseId");
+
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("Enrollments");
                 });
 
             modelBuilder.Entity("DDDProject.Domain.Models.Grade", b =>
@@ -155,21 +164,6 @@ namespace DDDProject.Persistence.Migrations
                     b.ToTable("TimeSlots");
                 });
 
-            modelBuilder.Entity("CourseStudent", b =>
-                {
-                    b.HasOne("DDDProject.Domain.Models.Course", null)
-                        .WithMany()
-                        .HasForeignKey("CoursesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("DDDProject.Domain.Models.Student", null)
-                        .WithMany()
-                        .HasForeignKey("StudentsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("DDDProject.Domain.Models.Course", b =>
                 {
                     b.HasOne("DDDProject.Domain.Models.Teacher", "Teacher")
@@ -179,10 +173,29 @@ namespace DDDProject.Persistence.Migrations
                     b.Navigation("Teacher");
                 });
 
+            modelBuilder.Entity("DDDProject.Domain.Models.Enrollment", b =>
+                {
+                    b.HasOne("DDDProject.Domain.Models.Course", "Course")
+                        .WithMany("Enrollments")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DDDProject.Domain.Models.Student", "Student")
+                        .WithMany("Enrollments")
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+
+                    b.Navigation("Student");
+                });
+
             modelBuilder.Entity("DDDProject.Domain.Models.Grade", b =>
                 {
                     b.HasOne("DDDProject.Domain.Models.Course", "Course")
-                        .WithMany()
+                        .WithMany("Grades")
                         .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -201,14 +214,25 @@ namespace DDDProject.Persistence.Migrations
             modelBuilder.Entity("DDDProject.Domain.Models.TimeSlot", b =>
                 {
                     b.HasOne("DDDProject.Domain.Models.Course", "AssignedCourse")
-                        .WithMany()
+                        .WithMany("TimeSlots")
                         .HasForeignKey("AssignedCourseId");
 
                     b.Navigation("AssignedCourse");
                 });
 
+            modelBuilder.Entity("DDDProject.Domain.Models.Course", b =>
+                {
+                    b.Navigation("Enrollments");
+
+                    b.Navigation("Grades");
+
+                    b.Navigation("TimeSlots");
+                });
+
             modelBuilder.Entity("DDDProject.Domain.Models.Student", b =>
                 {
+                    b.Navigation("Enrollments");
+
                     b.Navigation("Grades");
                 });
 

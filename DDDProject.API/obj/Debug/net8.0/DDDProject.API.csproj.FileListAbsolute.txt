@@ -52,12 +52,10 @@ C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\System.Di
 C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\DDDProject.Application.dll
 C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\DDDProject.Common.dll
 C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\DDDProject.Domain.dll
-C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\DDDProject.Infrastructure.dll
 C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\DDDProject.Persistence.dll
 C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\DDDProject.Application.pdb
 C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\DDDProject.Common.pdb
 C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\DDDProject.Domain.pdb
-C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\DDDProject.Infrastructure.pdb
 C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\DDDProject.Persistence.pdb
 C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\obj\Debug\net8.0\DDDProject.API.sourcelink.json
 C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\Humanizer.dll

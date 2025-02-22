@@ -2,11 +2,9 @@
 
 public class TimeSlot
 {
-    public Guid Id { get; private set; }
-    public DateTime StartTime { get; private set; }
-    public DateTime EndTime { get; private set; }
-
-    public Guid? AssignedCourseId { get; private set; }
-    public Course? AssignedCourse { get; private set; }
-
+    public Guid Id { get; set; }
+    public DateTime StartTime { get; set; }
+    public DateTime EndTime { get; set; }
+    public Guid? AssignedCourseId { get; set; }
+    public Course? AssignedCourse { get; set; }
 }

@@ -20,8 +20,8 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\DDDProject.Application\DDDProject.Application.csproj" />
       <ProjectReference Include="..\DDDProject.Common\DDDProject.Common.csproj" />
-      <ProjectReference Include="..\DDDProject.Domain\DDDProject.Domain.csproj" />
     </ItemGroup>
     
 
