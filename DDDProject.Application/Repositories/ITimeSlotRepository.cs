@@ -8,4 +8,7 @@ public interface ITimeSlotRepository
     Task AddAsync(TimeSlot timeSlot);
     Task UpdateAsync(TimeSlot timeSlot);
     Task DeleteAsync(Guid timeSlotId);
+    Task AssignTimeSlotToCourseAsync(Guid timeSlotId, Guid courseId);
+    Task<List<TimeSlot>> GetAvailableTimeSlotsAsync(Guid courseId);
 }
+

@@ -9,6 +9,8 @@ public interface ICourseRepository
     Task AddAsync(Course course);
     Task UpdateAsync(Course course);
     Task DeleteAsync(Guid courseId);
+    Task<List<Course>> GetAvailableCoursesAsync(DateTime currentDate);
     Task<List<Course>> GetCoursesByTeacherAsync(Guid teacherId);
-    Task<List<Course>> GetCoursesByStudentAsync(Guid studentId);
+    Task<List<Course>> GetCoursesWithStudentsAsync();
 }
+

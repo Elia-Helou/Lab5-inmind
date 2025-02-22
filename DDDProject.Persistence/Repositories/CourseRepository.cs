@@ -1,9 +1,13 @@
-﻿using DDDProject.Domain.Models;
-using DDDProject.Application.Repositories;
-using DDDProject.Persistence.DbContext;
+﻿using DDDProject.Application.Repositories;
+using DDDProject.Domain.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using DDDProject.Persistence.DbContext;
 
-namespace DDDProject.Infrastructure.Repositories
+namespace DDDProject.Persistence.Repositories
 {
     public class CourseRepository : ICourseRepository
     {
@@ -16,7 +20,8 @@ namespace DDDProject.Infrastructure.Repositories
 
         public async Task<Course> GetByIdAsync(Guid courseId)
         {
-            return await _context.Courses.FindAsync(courseId);
+            return await _context.Courses
+                .FirstOrDefaultAsync(c => c.Id == courseId);
         }
 
         public async Task<List<Course>> GetAllAsync()
@@ -38,7 +43,7 @@ namespace DDDProject.Infrastructure.Repositories
 
         public async Task DeleteAsync(Guid courseId)
         {
-            var course = await _context.Courses.FindAsync(courseId);
+            var course = await GetByIdAsync(courseId);
             if (course != null)
             {
                 _context.Courses.Remove(course);
@@ -46,17 +51,34 @@ namespace DDDProject.Infrastructure.Repositories
             }
         }
 
-        public async Task<List<Course>> GetCoursesByTeacherAsync(Guid teacherId)
-        {
-            return await _context.Courses.Where(c => c.TeacherId == teacherId).ToListAsync();
-        }
-
-        public async Task<List<Course>> GetCoursesByStudentAsync(Guid studentId)
+        public async Task<List<Course>> GetAvailableCoursesAsync(DateTime currentDate)
         {
             return await _context.Courses
-                .Where(c => c.Enrollments.Any(e => e.StudentId == studentId))
+                .Where(c => c.EnrollmentStart <= currentDate && c.EnrollmentEnd >= currentDate)
                 .ToListAsync();
         }
 
+        public async Task<List<Course>> GetCoursesByTeacherAsync(Guid teacherId)
+        {
+            return await _context.Courses
+                .Where(c => c.TeacherId == teacherId)
+                .ToListAsync();
+        }
+
+        public async Task<List<Course>> GetCoursesWithStudentsAsync()
+        {
+            return await _context.Courses
+                .Include(c => c.Enrollments)
+                    .ThenInclude(e => e.Student)
+                .ToListAsync();
+        }
+
+        public async Task<List<Student>> GetStudentsInCourseAsync(Guid courseId)
+        {
+            return await _context.Enrollments
+                .Where(e => e.CourseId == courseId)
+                .Select(e => e.Student)
+                .ToListAsync();
+        }
     }
 }

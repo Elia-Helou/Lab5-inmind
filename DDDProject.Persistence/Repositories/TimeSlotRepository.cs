@@ -1,10 +1,13 @@
 ﻿using DDDProject.Application.Repositories;
 using DDDProject.Domain.Models;
-using DDDProject.Infrastructure;
-using DDDProject.Persistence.DbContext;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using DDDProject.Persistence.DbContext;
 
-namespace DDDProject.Infrastructure.Repositories
+namespace DDDProject.Persistence.Repositories
 {
     public class TimeSlotRepository : ITimeSlotRepository
     {
@@ -25,7 +28,7 @@ namespace DDDProject.Infrastructure.Repositories
         {
             return await _context.TimeSlots.ToListAsync();
         }
-        
+
         public async Task AddAsync(TimeSlot timeSlot)
         {
             await _context.TimeSlots.AddAsync(timeSlot);
@@ -46,6 +49,25 @@ namespace DDDProject.Infrastructure.Repositories
                 _context.TimeSlots.Remove(timeSlot);
                 await _context.SaveChangesAsync();
             }
+        }
+
+        public async Task AssignTimeSlotToCourseAsync(Guid timeSlotId, Guid courseId)
+        {
+            var timeSlot = await GetByIdAsync(timeSlotId);
+            var course = await _context.Courses.FindAsync(courseId);
+
+            if (timeSlot != null && course != null)
+            {
+                course.TimeSlots.Add(timeSlot);
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        public async Task<List<TimeSlot>> GetAvailableTimeSlotsAsync(Guid courseId)
+        {
+            return await _context.TimeSlots
+                .Where(t => !t.AssignedCourseId.HasValue || t.AssignedCourseId != courseId)
+                .ToListAsync();
         }
     }
 }

@@ -1,9 +1,13 @@
 ﻿using DDDProject.Application.Repositories;
 using DDDProject.Domain.Models;
-using DDDProject.Persistence.DbContext;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using DDDProject.Persistence.DbContext;
 
-namespace DDDProject.Infrastructure.Repositories
+namespace DDDProject.Persistence.Repositories
 {
     public class EnrollmentRepository : IEnrollmentRepository
     {
@@ -14,23 +18,19 @@ namespace DDDProject.Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<Enrollment> GetByIdAsync(Guid courseId, Guid studentId)
+        public async Task<Enrollment> GetByIdAsync(Guid enrollmentId)
         {
             return await _context.Enrollments
-                .FirstOrDefaultAsync(e => e.CourseId == courseId && e.StudentId == studentId);
+                .Include(e => e.Student)
+                .Include(e => e.Course)
+                .FirstOrDefaultAsync(e => e.Id == enrollmentId);
         }
 
-        public async Task<List<Enrollment>> GetByCourseIdAsync(Guid courseId)
+        public async Task<List<Enrollment>> GetAllAsync()
         {
             return await _context.Enrollments
-                .Where(e => e.CourseId == courseId)
-                .ToListAsync();
-        }
-
-        public async Task<List<Enrollment>> GetByStudentIdAsync(Guid studentId)
-        {
-            return await _context.Enrollments
-                .Where(e => e.StudentId == studentId)
+                .Include(e => e.Student)
+                .Include(e => e.Course)
                 .ToListAsync();
         }
 
@@ -46,9 +46,51 @@ namespace DDDProject.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(Guid courseId, Guid studentId)
+        public async Task DeleteAsync(Guid enrollmentId)
         {
-            var enrollment = await GetByIdAsync(courseId, studentId);
+            var enrollment = await GetByIdAsync(enrollmentId);
+            if (enrollment != null)
+            {
+                _context.Enrollments.Remove(enrollment);
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        public async Task<List<Enrollment>> GetEnrollmentsByStudentAsync(Guid studentId)
+        {
+            return await _context.Enrollments
+                .Where(e => e.StudentId == studentId)
+                .Include(e => e.Course)
+                .ToListAsync();
+        }
+
+        public async Task<List<Enrollment>> GetEnrollmentsByCourseAsync(Guid courseId)
+        {
+            return await _context.Enrollments
+                .Where(e => e.CourseId == courseId)
+                .Include(e => e.Student)
+                .ToListAsync();
+        }
+
+        public async Task EnrollStudentAsync(Guid studentId, Guid courseId, DateTime enrollmentDate)
+        {
+            var enrollment = new Enrollment
+            {
+                Id = Guid.NewGuid(),
+                StudentId = studentId,
+                CourseId = courseId,
+                EnrollmentDate = enrollmentDate
+            };
+
+            await _context.Enrollments.AddAsync(enrollment);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task RemoveEnrollmentAsync(Guid studentId, Guid courseId)
+        {
+            var enrollment = await _context.Enrollments
+                .FirstOrDefaultAsync(e => e.StudentId == studentId && e.CourseId == courseId);
+
             if (enrollment != null)
             {
                 _context.Enrollments.Remove(enrollment);

@@ -50,5 +50,28 @@ namespace DDDProject.Infrastructure.Repositories
                 await _context.SaveChangesAsync();
             }
         }
+
+        public async Task AddGradeAsync(Guid studentId, Guid courseId, decimal gradeValue)
+        {
+            var grade = new Grade
+            {
+                Id = Guid.NewGuid(),
+                StudentId = studentId,
+                CourseId = courseId,
+                Value = (double)gradeValue
+            };
+
+            await _context.Grades.AddAsync(grade);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<List<Grade>> GetGradesForStudentAsync(Guid studentId)
+        {
+            return await _context.Grades
+                .Where(g => g.StudentId == studentId)
+                .ToListAsync();
+        }
+        
     }
+
 }
