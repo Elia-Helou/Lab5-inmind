@@ -1,4 +1,4 @@
-﻿namespace DDDProject.API.ViewModels;
+﻿namespace DDDProject.Application.ViewModels;
 
 public class StudentViewModel
 {

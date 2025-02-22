@@ -14,6 +14,10 @@
       <ProjectReference Include="..\DDDProject.Common\DDDProject.Common.csproj" />
       <ProjectReference Include="..\DDDProject.Domain\DDDProject.Domain.csproj" />
     </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="14.0.0" />
+    </ItemGroup>
     
 
 </Project>
