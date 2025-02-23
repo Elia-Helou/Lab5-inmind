@@ -1,6 +1,28 @@
-﻿namespace DDDProject.API.Controllers;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Query;
+using MediatR;
+using DDDProject.Application.Services.Courses.Queries;
+using DDDProject.Application.ViewModels;
 
-public class CourseController
+namespace DDDProject.API.Controllers
 {
-    
+    [Route("api/courses")]
+    [ApiController]
+    public class CoursesController : ControllerBase
+    {
+        private readonly IMediator _mediator;
+
+        public CoursesController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
+
+        [HttpGet]
+        [EnableQuery] 
+        public async Task<ActionResult<IEnumerable<CourseViewModel>>> GetCourses()
+        {
+            var courses = await _mediator.Send(new GetAllCoursesQuery());
+            return Ok(courses);
+        }
+    }
 }

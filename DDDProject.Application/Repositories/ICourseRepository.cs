@@ -1,11 +1,12 @@
-﻿using DDDProject.Domain.Models;
+﻿using DDDProject.Application.ViewModels;
+using DDDProject.Domain.Models;
 
 namespace DDDProject.Application.Repositories;
 
 public interface ICourseRepository
 {
     Task<Course> GetByIdAsync(Guid courseId);
-    Task<List<Course>> GetAllAsync();
+    Task<List<CourseViewModel>> GetAllAsync();
     Task AddAsync(Course course);
     Task UpdateAsync(Course course);
     Task DeleteAsync(Guid courseId);

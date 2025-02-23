@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DDDProject.Application.ViewModels;
 using DDDProject.Persistence.DbContext;
 
 namespace DDDProject.Persistence.Repositories
@@ -24,11 +25,23 @@ namespace DDDProject.Persistence.Repositories
                 .FirstOrDefaultAsync(c => c.Id == courseId);
         }
 
-        public async Task<List<Course>> GetAllAsync()
+        public async Task<List<CourseViewModel>> GetAllAsync()
         {
-            return await _context.Courses.ToListAsync();
+            return await _context.Courses
+                .Select(course => new CourseViewModel
+                {
+                    CourseId = course.Id,
+                    CourseName = course.Name,
+                    Description = course.Name, 
+                    MaxStudents = course.MaxStudents,
+                    EnrollmentStart = course.EnrollmentStart,
+                    EnrollmentEnd = course.EnrollmentEnd,
+                    TeacherName = course.Teacher != null ? course.Teacher.FirstName+" "+course.Teacher.LastName : "Unknown", 
+                    CurrentEnrollmentCount = course.Enrollments.Count 
+                })
+                .ToListAsync();
         }
-
+        
         public async Task AddAsync(Course course)
         {
             await _context.Courses.AddAsync(course);
