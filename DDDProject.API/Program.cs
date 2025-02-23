@@ -1,4 +1,8 @@
+using Asp.Versioning;
+using DDDProject.API.Configurations;
 using DDDProject.Application.Repositories;
+using DDDProject.Application.Services.Courses.Handlers;
+using DDDProject.Application.Services.Teacher.Handlers;
 using DDDProject.Domain.Models;
 using DDDProject.Infrastructure.Repositories;
 using DDDProject.Persistence.DbContext;
@@ -9,12 +13,24 @@ using Microsoft.OData.ModelBuilder;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddApiVersioning(options =>
+    {
+        var apiVersioningConfig = builder.Configuration.GetSection("ApiVersioning").Get<ApiVersioningConfig>();
+
+        options.DefaultApiVersion = new ApiVersion(apiVersioningConfig.DefaultMajorVersion, apiVersioningConfig.DefaultMinorVersion);
+        options.AssumeDefaultVersionWhenUnspecified = apiVersioningConfig.AssumeDefaultVersion;
+        options.ReportApiVersions = apiVersioningConfig.ReportApiVersions;
+        options.ApiVersionReader = new UrlSegmentApiVersionReader(); 
+    })
+    
+    .AddMvc();
 builder.Services.AddControllers(); 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddMediatR(configuration =>
 {
-    configuration.RegisterServicesFromAssembly(typeof(Program).Assembly);
+    configuration.RegisterServicesFromAssembly(typeof(CreateCourseHandler).Assembly);
+    configuration.RegisterServicesFromAssembly(typeof(RegisterTeacherCommandHandler).Assembly);
 });
 
 builder.Services.AddScoped<ICourseRepository, CourseRepository>();

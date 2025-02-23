@@ -148,3 +148,15 @@ C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\runtimes\
 C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\MediatR.dll
 C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\MediatR.Contracts.dll
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\Asp.Versioning.Abstractions.dll
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\Asp.Versioning.Http.dll
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\Asp.Versioning.Mvc.dll
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\Asp.Versioning.Mvc.ApiExplorer.dll
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\Microsoft.AspNetCore.OData.dll
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\Microsoft.OData.Core.dll
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\Microsoft.OData.Edm.dll
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\Microsoft.OData.ModelBuilder.dll
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\Microsoft.Spatial.dll
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\StackExchange.Redis.dll

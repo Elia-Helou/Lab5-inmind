@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Asp.Versioning;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OData.Query;
 using MediatR;
 using DDDProject.Application.Services.Courses.Queries;
@@ -8,6 +9,7 @@ namespace DDDProject.API.Controllers
 {
     [Route("api/courses")]
     [ApiController]
+    [ApiVersion(1.0)]
     public class CoursesController : ControllerBase
     {
         private readonly IMediator _mediator;
