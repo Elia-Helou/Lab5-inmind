@@ -9,7 +9,7 @@
         public bool CanApplyToFrance { get; set; }
         public string? ProfilePicturePath { get; set; }
 
-        public double AverageGrade => Grades.Any() ? Grades.Average(g => g.Value) : 0;
+        public double AverageGrade { get; set; }
 
         public void UpdateCanApplyToFrance()
         {

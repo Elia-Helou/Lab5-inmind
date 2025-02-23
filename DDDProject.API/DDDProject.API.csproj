@@ -24,4 +24,8 @@
         <ProjectReference Include="..\DDDProject.Persistence\DDDProject.Persistence.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="wwwroot\" />
+    </ItemGroup>
+
 </Project>
