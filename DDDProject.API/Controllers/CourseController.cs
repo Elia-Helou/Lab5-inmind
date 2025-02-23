@@ -1,4 +1,5 @@
 ﻿using Asp.Versioning;
+using DDDProject.Application.Services.Courses.Commands;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OData.Query;
 using MediatR;
@@ -26,5 +27,24 @@ namespace DDDProject.API.Controllers
             var courses = await _mediator.Send(new GetAllCoursesQuery());
             return Ok(courses);
         }
+        
+        [HttpPost("create")]
+        public async Task<IActionResult> CreateCourse([FromBody] CreateCourseCommand command)
+        {
+            if (command == null)
+            {
+                return BadRequest("Invalid course data.");
+            }
+
+            var result = await _mediator.Send(command);
+
+            if (result != null)
+            {
+                return Ok(new { Message = "Course created successfully." });
+            }
+
+            return BadRequest("Failed to create course.");
+        }
+        
     }
 }

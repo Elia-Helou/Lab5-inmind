@@ -31,6 +31,7 @@ builder.Services.AddMediatR(configuration =>
 {
     configuration.RegisterServicesFromAssembly(typeof(CreateCourseHandler).Assembly);
     configuration.RegisterServicesFromAssembly(typeof(RegisterTeacherCommandHandler).Assembly);
+    configuration.RegisterServicesFromAssembly(typeof(CreateCourseHandler).Assembly);
 });
 
 builder.Services.AddScoped<ICourseRepository, CourseRepository>();
