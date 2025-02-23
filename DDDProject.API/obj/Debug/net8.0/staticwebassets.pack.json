@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Elia\\RiderProjects\\DDDProject\\DDDProject.API\\wwwroot\\profile-pictures\\8391ef79-3d58-4e51-98a8-70fdaf9cae24.png",
+      "PackagePath": "staticwebassets\\profile-pictures\\8391ef79-3d58-4e51-98a8-70fdaf9cae24.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.DDDProject.API.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.DDDProject.API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.DDDProject.API.props",
+      "PackagePath": "build\\DDDProject.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.DDDProject.API.props",
+      "PackagePath": "buildMultiTargeting\\DDDProject.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.DDDProject.API.props",
+      "PackagePath": "buildTransitive\\DDDProject.API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

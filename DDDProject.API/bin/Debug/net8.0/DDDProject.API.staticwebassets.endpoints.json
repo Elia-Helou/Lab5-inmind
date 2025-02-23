@@ -1,5 +1,88 @@
 {
   "Version": 1,
   "ManifestType": "Build",
-  "Endpoints": []
+  "Endpoints": [
+    {
+      "Route": "profile-pictures/8391ef79-3d58-4e51-98a8-70fdaf9cae24.png",
+      "AssetFile": "profile-pictures/8391ef79-3d58-4e51-98a8-70fdaf9cae24.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "890757"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SnIxPYMZPmx1acHdCBlkdkJrF/Eq4wxF9Y8i5iL+0VE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 23 Feb 2025 20:54:29 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-SnIxPYMZPmx1acHdCBlkdkJrF/Eq4wxF9Y8i5iL+0VE="
+        }
+      ]
+    },
+    {
+      "Route": "profile-pictures/8391ef79-3d58-4e51-98a8-70fdaf9cae24.uj49j8y7bw.png",
+      "AssetFile": "profile-pictures/8391ef79-3d58-4e51-98a8-70fdaf9cae24.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "890757"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SnIxPYMZPmx1acHdCBlkdkJrF/Eq4wxF9Y8i5iL+0VE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 23 Feb 2025 20:54:29 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "uj49j8y7bw"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-SnIxPYMZPmx1acHdCBlkdkJrF/Eq4wxF9Y8i5iL+0VE="
+        },
+        {
+          "Name": "label",
+          "Value": "profile-pictures/8391ef79-3d58-4e51-98a8-70fdaf9cae24.png"
+        }
+      ]
+    }
+  ]
 }

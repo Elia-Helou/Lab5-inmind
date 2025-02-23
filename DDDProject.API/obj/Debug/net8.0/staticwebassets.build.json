@@ -1,12 +1,125 @@
 {
   "Version": 1,
-  "Hash": "bmlhLjTatFm8arFyAVUqHd16mXWt6HvKWy6dGojyFB8=",
+  "Hash": "9z9ohFRJOTmMtQ1PZnGhhJhiIn43+QEeA2Wdr+jIVnc=",
   "Source": "DDDProject.API",
   "BasePath": "_content/DDDProject.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "DDDProject.API\\wwwroot",
+      "Source": "DDDProject.API",
+      "ContentRoot": "C:\\Users\\Elia\\RiderProjects\\DDDProject\\DDDProject.API\\wwwroot\\",
+      "BasePath": "_content/DDDProject.API",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Elia\\RiderProjects\\DDDProject\\DDDProject.API\\wwwroot\\profile-pictures\\8391ef79-3d58-4e51-98a8-70fdaf9cae24.png",
+      "SourceId": "DDDProject.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Elia\\RiderProjects\\DDDProject\\DDDProject.API\\wwwroot\\",
+      "BasePath": "_content/DDDProject.API",
+      "RelativePath": "profile-pictures/8391ef79-3d58-4e51-98a8-70fdaf9cae24#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "uj49j8y7bw",
+      "Integrity": "SnIxPYMZPmx1acHdCBlkdkJrF/Eq4wxF9Y8i5iL+0VE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\profile-pictures\\8391ef79-3d58-4e51-98a8-70fdaf9cae24.png"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "profile-pictures/8391ef79-3d58-4e51-98a8-70fdaf9cae24.png",
+      "AssetFile": "C:\\Users\\Elia\\RiderProjects\\DDDProject\\DDDProject.API\\wwwroot\\profile-pictures\\8391ef79-3d58-4e51-98a8-70fdaf9cae24.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "890757"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SnIxPYMZPmx1acHdCBlkdkJrF/Eq4wxF9Y8i5iL+0VE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 23 Feb 2025 20:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-SnIxPYMZPmx1acHdCBlkdkJrF/Eq4wxF9Y8i5iL+0VE="
+        }
+      ]
+    },
+    {
+      "Route": "profile-pictures/8391ef79-3d58-4e51-98a8-70fdaf9cae24.uj49j8y7bw.png",
+      "AssetFile": "C:\\Users\\Elia\\RiderProjects\\DDDProject\\DDDProject.API\\wwwroot\\profile-pictures\\8391ef79-3d58-4e51-98a8-70fdaf9cae24.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "890757"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SnIxPYMZPmx1acHdCBlkdkJrF/Eq4wxF9Y8i5iL+0VE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 23 Feb 2025 20:54:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "uj49j8y7bw"
+        },
+        {
+          "Name": "label",
+          "Value": "profile-pictures/8391ef79-3d58-4e51-98a8-70fdaf9cae24.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-SnIxPYMZPmx1acHdCBlkdkJrF/Eq4wxF9Y8i5iL+0VE="
+        }
+      ]
+    }
+  ]
 }

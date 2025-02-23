@@ -160,3 +160,4 @@ C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\Microsoft
 C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\Microsoft.Spatial.dll
 C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
 C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\StackExchange.Redis.dll
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.API\bin\Debug\net8.0\DDDProject.API.staticwebassets.runtime.json

@@ -1,0 +1,22 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\profile-pictures\8391ef79-3d58-4e51-98a8-70fdaf9cae24.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DDDProject.API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DDDProject.API</BasePath>
+      <RelativePath>profile-pictures/8391ef79-3d58-4e51-98a8-70fdaf9cae24.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>uj49j8y7bw</Fingerprint>
+      <Integrity>SnIxPYMZPmx1acHdCBlkdkJrF/Eq4wxF9Y8i5iL+0VE=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\profile-pictures\8391ef79-3d58-4e51-98a8-70fdaf9cae24.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+  </ItemGroup>
+</Project>
