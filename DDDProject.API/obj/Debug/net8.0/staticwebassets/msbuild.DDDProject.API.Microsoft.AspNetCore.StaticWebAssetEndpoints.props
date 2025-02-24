@@ -12,5 +12,17 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"uj49j8y7bw"},{"Name":"integrity","Value":"sha256-SnIxPYMZPmx1acHdCBlkdkJrF/Eq4wxF9Y8i5iL\u002B0VE="},{"Name":"label","Value":"_content/DDDProject.API/profile-pictures/8391ef79-3d58-4e51-98a8-70fdaf9cae24.png"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"890757"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022SnIxPYMZPmx1acHdCBlkdkJrF/Eq4wxF9Y8i5iL\u002B0VE=\u0022"},{"Name":"Last-Modified","Value":"Sun, 23 Feb 2025 20:54:29 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DDDProject.API/profile-pictures/e4fd38b5-3842-42ab-ac72-da19c112dadb.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\profile-pictures\e4fd38b5-3842-42ab-ac72-da19c112dadb.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-SnIxPYMZPmx1acHdCBlkdkJrF/Eq4wxF9Y8i5iL\u002B0VE="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"890757"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022SnIxPYMZPmx1acHdCBlkdkJrF/Eq4wxF9Y8i5iL\u002B0VE=\u0022"},{"Name":"Last-Modified","Value":"Sun, 23 Feb 2025 21:03:02 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DDDProject.API/profile-pictures/e4fd38b5-3842-42ab-ac72-da19c112dadb.uj49j8y7bw.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\profile-pictures\e4fd38b5-3842-42ab-ac72-da19c112dadb.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"uj49j8y7bw"},{"Name":"integrity","Value":"sha256-SnIxPYMZPmx1acHdCBlkdkJrF/Eq4wxF9Y8i5iL\u002B0VE="},{"Name":"label","Value":"_content/DDDProject.API/profile-pictures/e4fd38b5-3842-42ab-ac72-da19c112dadb.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"890757"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022SnIxPYMZPmx1acHdCBlkdkJrF/Eq4wxF9Y8i5iL\u002B0VE=\u0022"},{"Name":"Last-Modified","Value":"Sun, 23 Feb 2025 21:03:02 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
   </ItemGroup>
 </Project>

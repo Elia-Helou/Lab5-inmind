@@ -9,8 +9,6 @@
     <ItemGroup>
       <Folder Include="Services\Grade\Queries\" />
       <Folder Include="Services\Student\Commands\" />
-      <Folder Include="Services\Student\Handlers\" />
-      <Folder Include="Services\Student\Queries\" />
       <Folder Include="Services\Teacher\Queries\" />
     </ItemGroup>
 

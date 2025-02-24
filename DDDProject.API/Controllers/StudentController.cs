@@ -61,5 +61,19 @@ namespace DDDProject.API.Controllers
 
             return Ok(new { Message = "Profile picture uploaded successfully.", ProfilePicturePath = student.ProfilePicturePath });
         }
+
+        [HttpGet]
+        [Route("GetById")]
+        public async Task<IActionResult> GetStudentById([FromQuery] Guid id)
+        {
+            var stu = await _studentRepository.GetByIdAsync(id);
+            if (stu == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(stu);
+
+        }
     }
 }

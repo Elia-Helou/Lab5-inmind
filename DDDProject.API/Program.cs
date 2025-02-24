@@ -1,6 +1,7 @@
 using Asp.Versioning;
 using DDDProject.API.Configurations;
 using DDDProject.Application.Repositories;
+using DDDProject.Application.Services.Caching;
 using DDDProject.Application.Services.Courses.Handlers;
 using DDDProject.Application.Services.Teacher.Handlers;
 using DDDProject.Domain.Models;
@@ -65,6 +66,9 @@ builder.Services.AddControllers()
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
+
+builder.Services.AddMemoryCache();  // for the new lab
+builder.Services.AddSingleton<ICacheService, CacheService>();
 
 var app = builder.Build();
 
