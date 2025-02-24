@@ -27,4 +27,5 @@ public class CreateCourseHandler : IRequestHandler<CreateCourseCommand, Guid>
         await _courseRepository.AddAsync(course);
         return course.Id;
     }
+    
 }
