@@ -19,7 +19,6 @@ public class AddGradeHandler : IRequestHandler<AddGradeCommand>
 
     public async Task Handle(AddGradeCommand request, CancellationToken cancellationToken)
     {
-        // Step 1: Add grade
         var grade = new Domain.Models.Grade
         {
             Id = Guid.NewGuid(),

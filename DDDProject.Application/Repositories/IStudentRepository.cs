@@ -9,5 +9,6 @@ public interface IStudentRepository
     Task AddAsync(Student student);
     Task UpdateAsync(Student student);
     Task DeleteAsync(Guid studentId);
+    Task RecalculateStudentAveragesAsync();
 }
 

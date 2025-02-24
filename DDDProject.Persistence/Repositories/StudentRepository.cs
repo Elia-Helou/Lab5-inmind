@@ -45,5 +45,24 @@ namespace DDDProject.Infrastructure.Repositories
                 await _context.SaveChangesAsync();
             }
         }
+        
+        public async Task RecalculateStudentAveragesAsync()
+        {
+            var students = await _context.Students
+                .Include(s => s.Grades) 
+                .ToListAsync();
+
+            foreach (var student in students)
+            {
+                if (student.Grades.Any())
+                {
+                    student.AverageGrade = student.Grades.Average(g => g.Value);
+                    student.UpdateCanApplyToFrance(); 
+                }
+            }
+
+            await _context.SaveChangesAsync();
+            Console.WriteLine("Student grade averages recalculated.");
+        }
     }
 }
