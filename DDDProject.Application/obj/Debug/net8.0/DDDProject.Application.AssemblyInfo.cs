@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DDDProject.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3f3efb4834fa959757f9a5c041cb19ae510048b8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b171ab6f42d4122c91bf3691a52610c821e4aaa")]
 [assembly: System.Reflection.AssemblyProductAttribute("DDDProject.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DDDProject.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
