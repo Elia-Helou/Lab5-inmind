@@ -1,3 +1,4 @@
+using System.Globalization;
 using Asp.Versioning;
 using DDDProject.API.Configurations;
 using DDDProject.Application.Repositories;
@@ -13,7 +14,9 @@ using Microsoft.AspNetCore.OData;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OData.ModelBuilder;
 using DDDProject.Infrastructure.Jobs;
+using DDDProject.Infrastructure.Localization;
 using DDDProject.Infrastructure.Services;
+using Microsoft.AspNetCore.Localization;
 using Serilog;
 using Serilog.Context;
 
@@ -84,6 +87,8 @@ builder.Services.AddControllers()
         options.EnableQueryFeatures();  
         options.AddRouteComponents("odata", modelBuilder.GetEdmModel());
     });
+builder.Services.AddLocalization(options => options.ResourcesPath = "Infrastructure/Localization/Resources");
+builder.Services.AddSingleton<SharedLocalizer>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
@@ -107,6 +112,16 @@ builder.Services.AddSingleton<ICacheService, CacheService>();
 
 var app = builder.Build();
 
+//for localizing
+var supportedCultures = new[] { "en", "fr" };
+var localizationOptions = new RequestLocalizationOptions
+{
+    DefaultRequestCulture = new RequestCulture("en"),
+    SupportedCultures = supportedCultures.Select(c => new CultureInfo(c)).ToList(),
+    SupportedUICultures = supportedCultures.Select(c => new CultureInfo(c)).ToList()
+};
+
+app.UseRequestLocalization(localizationOptions);
 app.Use(async (context, next) =>
 {
     var correlationId = context.Request.Headers["X-Correlation-ID"].FirstOrDefault() ?? Guid.NewGuid().ToString();

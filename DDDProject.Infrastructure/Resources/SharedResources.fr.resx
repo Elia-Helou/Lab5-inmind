@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <data name="FetchingStudent" xml:space="preserve">
+    <value>Récupération de l'étudiant avec l'ID {0}</value>
+  </data>
+    <data name="StudentNotFound" xml:space="preserve">
+    <value>Étudiant avec l'ID {0} non trouvé</value>
+  </data>
+</root>

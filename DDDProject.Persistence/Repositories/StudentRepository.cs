@@ -1,30 +1,33 @@
 ﻿using DDDProject.Domain.Models;
 using DDDProject.Application.Repositories;
 using DDDProject.Persistence.DbContext;
+using DDDProject.Infrastructure.Localization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace DDDProject.Infrastructure.Repositories
+namespace DDDProject.Persistence.Repositories
 {
     public class StudentRepository : IStudentRepository
     {
         private readonly AppDbContext _context;
         private readonly ILogger<StudentRepository> _logger;
+        private readonly SharedLocalizer _localizer;
 
-        public StudentRepository(AppDbContext context, ILogger<StudentRepository> logger)
+        public StudentRepository(AppDbContext context, ILogger<StudentRepository> logger, SharedLocalizer localizer)
         {
             _context = context;
             _logger = logger;
+            _localizer = localizer;
         }
 
         public async Task<Student> GetByIdAsync(Guid studentId)
         {
-            _logger.LogInformation("Fetching student with ID {StudentId}", studentId);
+            _logger.LogInformation(_localizer.Get("Fetching student with ID {0}"), studentId);
 
             var student = await _context.Students.FindAsync(studentId);
             if (student == null)
             {
-                _logger.LogWarning("Student with ID {StudentId} not found", studentId);
+                _logger.LogWarning(_localizer.Get("Student with ID {0} not found"), studentId);
             }
 
             return student;
@@ -32,28 +35,28 @@ namespace DDDProject.Infrastructure.Repositories
 
         public async Task<List<Student>> GetAllAsync()
         {
-            _logger.LogInformation("Fetching all students from the database.");
+            _logger.LogInformation(_localizer.Get("Fetching all students from the database."));
             return await _context.Students.ToListAsync();
         }
 
         public async Task AddAsync(Student student)
         {
-            _logger.LogInformation("Adding a new student: {StudentName}", student.Name);
+            _logger.LogInformation(_localizer.Get("Adding a new student: {0}"), student.Name);
 
             await _context.Students.AddAsync(student);
             await _context.SaveChangesAsync();
 
-            _logger.LogInformation("Student {StudentName} added successfully", student.Name);
+            _logger.LogInformation(_localizer.Get("Student {0} added successfully"), student.Name);
         }
 
         public async Task UpdateAsync(Student student)
         {
-            _logger.LogInformation("Updating student with ID {StudentId}", student.Id);
+            _logger.LogInformation(_localizer.Get("Updating student with ID {0}"), student.Id);
 
             _context.Students.Update(student);
             await _context.SaveChangesAsync();
 
-            _logger.LogInformation("Student {StudentId} updated successfully", student.Id);
+            _logger.LogInformation(_localizer.Get("Student {0} updated successfully"), student.Id);
         }
 
         public async Task DeleteAsync(Guid studentId)
@@ -61,19 +64,19 @@ namespace DDDProject.Infrastructure.Repositories
             var student = await _context.Students.FindAsync(studentId);
             if (student == null)
             {
-                _logger.LogWarning("Attempted to delete non-existent student {StudentId}", studentId);
+                _logger.LogWarning(_localizer.Get("Attempted to delete non-existent student {0}"), studentId);
                 return;
             }
 
             _context.Students.Remove(student);
             await _context.SaveChangesAsync();
 
-            _logger.LogInformation("Deleted student {StudentId}", studentId);
+            _logger.LogInformation(_localizer.Get("Deleted student {0}"), studentId);
         }
 
         public async Task RecalculateStudentAveragesAsync()
         {
-            _logger.LogInformation("Starting recalculation of student grade averages.");
+            _logger.LogInformation(_localizer.Get("Starting recalculation of student grade averages."));
 
             var students = await _context.Students
                 .Include(s => s.Grades)
@@ -86,13 +89,13 @@ namespace DDDProject.Infrastructure.Repositories
                     student.AverageGrade = student.Grades.Average(g => g.Value);
                     student.UpdateCanApplyToFrance();
 
-                    _logger.LogDebug("Updated average grade for student {StudentId}: {AverageGrade}", student.Id, student.AverageGrade);
+                    _logger.LogDebug(_localizer.Get("Updated average grade for student {0}: {1}"), student.Id, student.AverageGrade);
                 }
             }
 
             await _context.SaveChangesAsync();
 
-            _logger.LogInformation("Successfully recalculated student grade averages.");
+            _logger.LogInformation(_localizer.Get("Successfully recalculated student grade averages."));
         }
     }
 }

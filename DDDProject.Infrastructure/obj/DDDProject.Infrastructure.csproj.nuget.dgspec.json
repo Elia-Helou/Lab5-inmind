@@ -281,6 +281,10 @@
               "target": "Package",
               "version": "[1.8.18, )"
             },
+            "Microsoft.Extensions.Localization": {
+              "target": "Package",
+              "version": "[10.0.0-preview.1.25120.3, )"
+            },
             "Serilog.AspNetCore": {
               "target": "Package",
               "version": "[9.0.0, )"
