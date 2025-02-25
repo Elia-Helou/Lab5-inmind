@@ -10,3 +10,11 @@ C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Infrastructure\obj\Debug\net8.
 C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Infrastructure\obj\Debug\net8.0\refint\DDDProject.Infrastructure.dll
 C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Infrastructure\obj\Debug\net8.0\DDDProject.Infrastructure.pdb
 C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Infrastructure\obj\Debug\net8.0\ref\DDDProject.Infrastructure.dll
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Infrastructure\bin\Debug\net8.0\DDDProject.Application.dll
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Infrastructure\bin\Debug\net8.0\DDDProject.Common.dll
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Infrastructure\bin\Debug\net8.0\DDDProject.Domain.dll
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Infrastructure\bin\Debug\net8.0\DDDProject.Application.pdb
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Infrastructure\bin\Debug\net8.0\DDDProject.Common.pdb
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Infrastructure\bin\Debug\net8.0\DDDProject.Domain.pdb
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Infrastructure\obj\Debug\net8.0\DDDProject.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Elia\RiderProjects\DDDProject\DDDProject.Infrastructure\obj\Debug\net8.0\DDDProje.8EC9D92F.Up2Date

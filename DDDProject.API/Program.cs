@@ -14,6 +14,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.OData.ModelBuilder;
 using DDDProject.Infrastructure.Jobs;
 using DDDProject.Infrastructure.Services;
+using Serilog;
+using Serilog.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -87,11 +89,36 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
 
-builder.Services.AddMemoryCache();  // for the new lab
+Log.Logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration) 
+    .Enrich.FromLogContext()
+    .Enrich.WithThreadId()
+    .Enrich.WithCorrelationId() 
+    .WriteTo.Console() 
+    .WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day) 
+    .WriteTo.Seq("http://localhost:5341") 
+    .CreateLogger();
+
+builder.Host.UseSerilog();
+builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddMemoryCache();  
 builder.Services.AddSingleton<ICacheService, CacheService>();
 
 var app = builder.Build();
 
+app.Use(async (context, next) =>
+{
+    var correlationId = context.Request.Headers["X-Correlation-ID"].FirstOrDefault() ?? Guid.NewGuid().ToString();
+    
+    using (LogContext.PushProperty("CorrelationId", correlationId))
+    {
+        context.Response.Headers["X-Correlation-ID"] = correlationId;
+        await next();
+    }
+});
+
+app.UseSerilogRequestLogging();
 app.UseHangfireDashboard();
 
 if (app.Environment.IsDevelopment())
