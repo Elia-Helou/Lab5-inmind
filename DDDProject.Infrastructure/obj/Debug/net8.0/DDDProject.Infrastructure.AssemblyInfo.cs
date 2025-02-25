@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DDDProject.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b171ab6f42d4122c91bf3691a52610c821e4aaa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94d5e006006d7bf354caa3c041af9bf40ac02f30")]
 [assembly: System.Reflection.AssemblyProductAttribute("DDDProject.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DDDProject.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -22,11 +22,16 @@ builder.Services.AddHangfire(config =>
 builder.Services.AddHangfireServer();
 
 builder.Services.AddScoped<EmailNotificationJob>();
-
+builder.Services.AddScoped<RecalculateStudentGradeAverageJob>();
 RecurringJob.AddOrUpdate<EmailNotificationJob>(
     "send-email-notifications",
     job => job.ExecuteAsync(),
     Cron.Daily);
+
+RecurringJob.AddOrUpdate<RecalculateStudentGradeAverageJob>(
+    "recalculate-student-averages",
+    job => job.ExecuteAsync(),
+    Cron.Hourly);
 
 builder.Services.AddApiVersioning(options =>
 {
